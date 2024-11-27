@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Usuario</title>
+    <!-- Importa Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Tus estilos personalizados -->
+    <link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <nav class="blue lighten-1">
+        <div class="nav-wrapper container">
+            <a href="/" class="brand-logo">CRUD Usuarios</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/agregar/">Agregar Usuario</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        <h2 class="center-align">Agregar Nuevo Usuario</h2>
+        <form action="/add" method="POST">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input type="text" id="name" name="nombre" required maxlength="20" pattern="[a-zA-Z ]+">
+                    <label for="name">Nombre</label>
+                </div>
+                <div class="input-field col s6">
+                    <input type="text" id="ap_paterno" name="ap_paterno" required maxlength="20" pattern="[a-zA-Z ]+">
+                    <label for="ap_paterno">Apellido Paterno</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input type="text" id="ap_materno" name="ap_materno" required maxlength="20" pattern="[a-zA-Z ]+">
+                    <label for="ap_materno">Apellido Materno</label>
+                </div>
+                <div class="input-field col s6">
+                    <input type="number" id="edad" name="edad" required min="1" max="120">
+                    <label for="edad">Edad</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input type="text" id="oficio" name="oficio" required maxlength="20" pattern="[a-zA-Z ]+">
+                    <label for="oficio">Oficio</label>
+                </div>
+                <div class="input-field col s6">
+                    <input type="email" id="email" name="correo" required maxlength="40">
+                    <label for="email">Correo</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input type="number" id="telefono" name="telefono" required min="1000000000" max="9999999999">
+                    <label for="telefono">Teléfono</label>
+                </div>
+                <div class="input-field col s6">
+                    <input type="text" id="direccion" name="direccion" required maxlength="50">
+                    <label for="direccion">Dirección</label>
+                </div>
+            </div>
+            <div class="center">
+                <button class="btn waves-effect waves-light blue lighten-1" type="submit">Agregar</button>
+                <a href="/" class="btn waves-effect waves-light red lighten-1">Cancelar</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- Importa Materialize JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

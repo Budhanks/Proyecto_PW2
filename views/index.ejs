@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuarios</title>
+    <!-- Enlace al CSS de Materialize -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Enlace a tu archivo CSS personalizado -->
+    <link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="blue lighten-1">
+        <div class="nav-wrapper container">
+            <a href="/" class="brand-logo">CRUD Usuarios</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/">Inicio</a></li>
+                <li><a href="/agregar/">Agregar Usuario</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Título -->
+    <div class="container">
+        <h2 class="center-align">Lista de Usuarios</h2>
+
+        <!-- Tabla -->
+        <table class="striped responsive-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Ap. Paterno</th>
+                    <th>Ap. Materno</th>
+                    <th>Edad</th>
+                    <th>Oficio</th>
+                    <th>Correo</th>
+                    <th>Teléfono</th>
+                    <th>Dirección</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% usuarios.forEach(usuarios => { %>
+                <tr>
+                    <td><%= usuarios.id_usr %></td>
+                    <td><%= usuarios.nombre %></td>
+                    <td><%= usuarios.ap_paterno %></td>
+                    <td><%= usuarios.ap_materno %></td>
+                    <td><%= usuarios.edad %></td>
+                    <td><%= usuarios.oficio %></td>
+                    <td><%= usuarios.correo %></td>
+                    <td><%= usuarios.telefono %></td>
+                    <td><%= usuarios.direccion %></td>
+                    <td>
+                        <a href="/edit/<%= usuarios.id_usr %>" class="waves-effect waves-light btn-small blue lighten-1">Editar</a>
+                        <a href="/delete/<%= usuarios.id_usr %>" class="waves-effect waves-light btn-small red lighten-1">Eliminar</a>
+                    </td>
+                </tr>
+                <% }); %>
+            </tbody>
+        </table>
+
+        <!-- Botón para agregar nuevo usuario -->
+        <div class="center-align" style="margin-top: 20px;">
+            <a href="/agregar/" class="btn-large waves-effect waves-light blue lighten-1">Agregar Nuevo Usuario</a>
+        </div>
+    </div>
+
+    <!-- Enlace al JavaScript de Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
